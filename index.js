@@ -13,6 +13,7 @@ app.use(cors())
 app.use(express.json({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use('/', Route)
+app.use(express.static('client/build'))
 Connection()
 
 let users = [];
@@ -51,7 +52,7 @@ io.on('connection', (socket) => {
 })
 
 app.get('/*', (req, res) => {
-    res.sendFile(path.resolve('./client/build/index.html'))
+    res.sendFile(path.resolve('client/build/index.html'))
 })
 
 server.listen(port, () => { console.log(`server is running on port ${port}`) })
