@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'
-import Connection from "./database/db.js";
+import Connection from "./config/db.js";
 import Route from './routes/route.js'
 import http from 'http'
 import path from "path";
